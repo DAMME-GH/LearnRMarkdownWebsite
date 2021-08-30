@@ -15,29 +15,33 @@ output: html_document
 </style>
 
 <div class="row" style="padding-top: 30px;">
-<div class="col-sm-6">
 
-# **My Lab Journal**
 
-This is a template example for lab journaling. Students in Matt Crump's Human Cognition and Performance Lab will use this template to learn R, and other things. Students can replace this text with more fun things. People not in my lab can use this too.
+# Executive Summary 
 
-## How to use
+In recent years, the prices of condominiums have skyrocketed, which has caused various problems for individuals that seek to find their new dream home. This pattern is also evident for the average square meter price in Aarhus C, leaving people with little to no option to know if a seller's proposition is fair. The motivation for this paper is to investigate feature importance and the behavior of the condominiums market in the central part of Aarhus. The purpose is to build machine- and deep learning models with the objective of predicting a best guess for today's sales price given data from the period 2018-2021. This acts as an unbiased estimate for people, looking for a new condominium in the city center. In conclusion, the best three models developed in this paper are: Extreme Gradient Boosting with a MAE at 231,363 DKK, Random Forest with a MAE at 224,218 DKK, and a superior Neural Network model with a MAE as low at 24,787 DKK. Thus, by utilizing the latter model, it is possible to obtain a reliable second opinion.
 
-1. fork the repo for this website and follow instructions on read me to get set up. [https://github.com/CrumpLab/LabJournalWebsite](https://github.com/CrumpLab/LabJournalWebsite)
 
-2. Blog/journal what you are doing in R, by editing the Journal.Rmd. See the [Journal page](https://crumplab.github.io/LabJournalWebsite/Journal.html) for an example of what to do to get started learning R.
+```{r, echo=FALSE}
+library(readxl)
+m2pris <- read_excel("data/m2pris.xlsx")
 
-3. See the [links page](https://crumplab.github.io/LabJournalWebsite/Links.html) for lots of helpful links on learning R.
+m2pris$...1 <- gsub("K2",".25", m2pris$...1)
+m2pris$...1 <- gsub("K3",".50", m2pris$...1)
+m2pris$...1 <- gsub("K4",".75", m2pris$...1)
 
-4. Change everything to make it your own.
+m2pris$...1 <- as.numeric(m2pris$...1)
+
+library(dygraphs)
+dygraph(m2pris, main = "Square meter prices") %>% 
+  dyRangeSelector(dateWindow = c("1992", "2021")) %>% 
+  dyLegend(show = "follow")
+```
+
+
 
 
 </div>
 <div class="col-sm-6">
 
-### [Crump Lab: Human Cognition and Performance](https://crumplab.github.io)
 
-<a href = "https://crumplab.github.io">
-![](images/logo.png)
-</a>
-</div>

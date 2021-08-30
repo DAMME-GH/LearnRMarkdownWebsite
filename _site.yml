@@ -1,6 +1,6 @@
-name: "MyLabJournal"
+name: "RealEstate"
 navbar:
-  title: "MyLabJournal"
+  title: "Real Estate in Aarhus"
   left:
     - text: "Home"
       href: index.html
@@ -8,4 +8,6 @@ navbar:
       href: Journal.html
     - text: "Links"
       href: Links.html
+    - text: "dash"
+      href. dash.html
 output_dir: "docs"

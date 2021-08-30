@@ -32,6 +32,14 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <link href="site_libs/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="site_libs/highlightjs-9.12.0/highlight.js"></script>
+<script src="site_libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
+<link href="site_libs/dygraphs-1.1.1/dygraph.css" rel="stylesheet" />
+<script src="site_libs/dygraphs-1.1.1/dygraph-combined.js"></script>
+<script src="site_libs/dygraphs-1.1.1/shapes.js"></script>
+<script src="site_libs/moment-2.8.4/moment.js"></script>
+<script src="site_libs/moment-timezone-0.2.5/moment-timezone-with-data.js"></script>
+<script src="site_libs/moment-fquarter-1.0.0/moment-fquarter.min.js"></script>
+<script src="site_libs/dygraphs-binding-1.1.1.6/dygraphs.js"></script>
 
 <style type="text/css">
   code{white-space: pre-wrap;}
@@ -237,7 +245,7 @@ $(document).ready(function () {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="index.html">MyLabJournal</a>
+      <a class="navbar-brand" href="index.html">Real Estate in Aarhus</a>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -277,24 +285,18 @@ $(document).ready(function () {
 }
 
 </style>
-<div class="row" style="padding-top: 30px;">
-<div id="my-lab-journal" class="section level1 col-sm-6">
-<h1><strong>My Lab Journal</strong></h1>
-<p>This is a template example for lab journaling. Students in Matt Crump’s Human Cognition and Performance Lab will use this template to learn R, and other things. Students can replace this text with more fun things. People not in my lab can use this too.</p>
-<div id="how-to-use" class="section level2">
-<h2>How to use</h2>
-<ol style="list-style-type: decimal">
-<li><p>fork the repo for this website and follow instructions on read me to get set up. <a href="https://github.com/CrumpLab/LabJournalWebsite">https://github.com/CrumpLab/LabJournalWebsite</a></p></li>
-<li><p>Blog/journal what you are doing in R, by editing the Journal.Rmd. See the <a href="https://crumplab.github.io/LabJournalWebsite/Journal.html">Journal page</a> for an example of what to do to get started learning R.</p></li>
-<li><p>See the <a href="https://crumplab.github.io/LabJournalWebsite/Links.html">links page</a> for lots of helpful links on learning R.</p></li>
-<li><p>Change everything to make it your own.</p></li>
-</ol>
+<div id="executive-summary" class="section level1 row" style="padding-top: 30px;">
+<h1>Executive Summary</h1>
+<p>In recent years, the prices of condominiums have skyrocketed, which has caused various problems for individuals that seek to find their new dream home. This pattern is also evident for the average square meter price in Aarhus C, leaving people with little to no option to know if a seller’s proposition is fair. The motivation for this paper is to investigate feature importance and the behavior of the condominiums market in the central part of Aarhus. The purpose is to build machine- and deep learning models with the objective of predicting a best guess for today’s sales price given data from the period 2018-2021. This acts as an unbiased estimate for people, looking for a new condominium in the city center. In conclusion, the best three models developed in this paper are: Extreme Gradient Boosting with a MAE at 231,363 DKK, Random Forest with a MAE at 224,218 DKK, and a superior Neural Network model with a MAE as low at 24,787 DKK. Thus, by utilizing the latter model, it is possible to obtain a reliable second opinion.</p>
+<pre><code>## New names:
+## * `` -&gt; ...1</code></pre>
+<div id="htmlwidget-18a031277da38f5af402" style="width:672px;height:480px;" class="dygraphs html-widget"></div>
+<script type="application/json" data-for="htmlwidget-18a031277da38f5af402">{"x":{"attrs":{"title":"Square meter prices","labels":["...1","Detached/terraced house","Condominium","Holiday home","Aggregate average","Condominium (Aarhus)"],"retainDateWindow":false,"axes":{"x":{"pixelsPerLabel":60}},"showRangeSelector":true,"dateWindow":["1992","2021"],"rangeSelectorHeight":40,"rangeSelectorPlotFillColor":" #A7B1C4","rangeSelectorPlotStrokeColor":"#808FAB","interactionModel":"Dygraph.Interaction.defaultModel","legend":"follow","labelsDivWidth":250,"labelsShowZeroValues":true,"labelsSeparateLines":false,"hideOverlayOnMouseOut":true},"annotations":[],"shadings":[],"events":[],"format":"numeric","data":[[1992,1992.25,1992.5,1992.75,1993,1993.25,1993.5,1993.75,1994,1994.25,1994.5,1994.75,1995,1995.25,1995.5,1995.75,1996,1996.25,1996.5,1996.75,1997,1997.25,1997.5,1997.75,1998,1998.25,1998.5,1998.75,1999,1999.25,1999.5,1999.75,2000,2000.25,2000.5,2000.75,2001,2001.25,2001.5,2001.75,2002,2002.25,2002.5,2002.75,2003,2003.25,2003.5,2003.75,2004,2004.25,2004.5,2004.75,2005,2005.25,2005.5,2005.75,2006,2006.25,2006.5,2006.75,2007,2007.25,2007.5,2007.75,2008,2008.25,2008.5,2008.75,2009,2009.25,2009.5,2009.75,2010,2010.25,2010.5,2010.75,2011,2011.25,2011.5,2011.75,2012,2012.25,2012.5,2012.75,2013,2013.25,2013.5,2013.75,2014,2014.25,2014.5,2014.75,2015,2015.25,2015.5,2015.75,2016,2016.25,2016.5,2016.75,2017,2017.25,2017.5,2017.75,2018,2018.25,2018.5,2018.75,2019,2019.25,2019.5,2019.75,2020,2020.25,2020.5,2020.75],[4021,4129,4000,3945,3851,4135,4296,4301,4333,4432,4443,4403,4450,4593,4635,4840,4946,5151,5229,5344,5567,5733,5806,5870,6111,6313,6233,6344,6616,6907,6825,6846,7023,7268,7348,7352,7611,7771,7631,7550,7869,7990,7956,7794,7886,8320,8367,8312,8637,8911,9142,9354,9760,10369,10922,11493,12261,12997,13331,13408,13480,13716,13578,13503,13391,13435,12967,12198,11504,11690,11618,11736,11824,12102,12000,11930,11824,11812,11339,11145,10972,11072,11084,10931,11041,11167,11128,11082,11100,11406,11315,11285,11764,12192,12124,12026,12166,12528,12670,12529,12647,13152,13160,13179,13407,13628,13697,13638,13618,14002,14145,14176,14124,14350,14731,15014],[5820,5850,5737,5443,5304,5452,5801,5609,5776,5784,5748,5672,5663,5834,6032,6067,6191,6609,6621,6631,6907,7237,7464,7648,7956,8337,8627,8773,9261,9679,9952,9958,10204,10654,10946,11012,11523,11901,12457,12286,12525,13077,13193,13105,13491,13752,14050,14176,14710,15364,16024,16390,17304,18590,20102,21269,22654,23990,23848,22928,22371,22279,21990,21044,20633,20364,19547,18093,16799,17240,17375,17815,17970,18593,18515,18463,18577,18522,17655,17441,17461,17625,17708,18171,18429,19133,19480,19441,19439,20291,20312,20470,21261,22467,22632,22719,23270,24218,24338,24535,25146,25973,26720,26627,27416,27950,27710,27291,27544,27943,28099,28256,28678,28907,29768,30657],[4441,4454,4250,4419,4431,4494,4436,4675,4733,4717,4571,4692,4719,4895,4735,5005,5257,5308,5098,5323,5671,5660,5693,5858,6206,6180,6290,6673,6817,7031,7041,6840,7275,7603,7623,7794,7978,8305,8263,8298,8649,8988,9289,9324,9601,10067,10405,10583,11131,11942,12642,12888,13699,14524,15552,16136,16217,17334,17689,17831,17745,18536,18257,18336,18042,18290,18379,16242,14824,15726,15853,16030,15938,16163,15825,15873,15289,15263,14841,14651,13899,14327,14037,13564,13888,14111,13834,13826,13391,13750,13526,13328,13604,14151,13778,13454,13277,14123,14091,13671,13406,14606,14490,14622,14658,15264,15249,15027,14882,15864,15716,15726,15809,16426,17532,17785],[4760.66666666667,4811,4662.33333333333,4602.33333333333,4528.66666666667,4693.66666666667,4844.33333333333,4861.66666666667,4947.33333333333,4977.66666666667,4920.66666666667,4922.33333333333,4944,5107.33333333333,5134,5304,5464.66666666667,5689.33333333333,5649.33333333333,5766,6048.33333333333,6210,6321,6458.66666666667,6757.66666666667,6943.33333333333,7050,7263.33333333333,7564.66666666667,7872.33333333333,7939.33333333333,7881.33333333333,8167.33333333333,8508.33333333333,8639,8719.33333333333,9037.33333333333,9325.66666666667,9450.33333333333,9378,9681,10018.3333333333,10146,10074.3333333333,10326,10713,10940.6666666667,11023.6666666667,11492.6666666667,12072.3333333333,12602.6666666667,12877.3333333333,13587.6666666667,14494.3333333333,15525.3333333333,16299.3333333333,17044,18107,18289.3333333333,18055.6666666667,17865.3333333333,18177,17941.6666666667,17627.6666666667,17355.3333333333,17363,16964.3333333333,15511,14375.6666666667,14885.3333333333,14948.6666666667,15193.6666666667,15244,15619.3333333333,15446.6666666667,15422,15230,15199,14611.6666666667,14412.3333333333,14110.6666666667,14341.3333333333,14276.3333333333,14222,14452.6666666667,14803.6666666667,14814,14783,14643.3333333333,15149,15051,15027.6666666667,15543,16270,16178,16066.3333333333,16237.6666666667,16956.3333333333,17033,16911.6666666667,17066.3333333333,17910.3333333333,18123.3333333333,18142.6666666667,18493.6666666667,18947.3333333333,18885.3333333333,18652,18681.3333333333,19269.6666666667,19320,19386,19537,19894.3333333333,20677,21152],[7439,7347,7597,7151,6413,7076,7544,7326,7690,7430,7680,7519,7377,8073,8453,8406,8620,9303,9726,9648,10447,10324,10941,10619,11170,11693,12575,11919,12018,12803,12842,12931,12246,13193,13760,12907,13564,13978,14674,13795,14068,14577,14597,14419,15674,16140,17148,17006,17539,19602,21301,22112,23067,24810,27374,27924,29518,30561,30509,29106,28562,27789,26530,25343,25221,25546,24585,22132,21935,23010,23440,24221,25202,25322,25267,25576,26148,26679,25338,24881,24593,24861,25372,25534,26637,27035,27657,26789,27223,28561,28807,28242,29323,30851,31410,31354,32792,33697,33303,33262,34555,34591,35046,34909,36300,35876,36630,35165,35695,36348,35561,36203,36878,36804,38538,38574]]},"evals":["attrs.interactionModel"],"jsHooks":[]}</script>
 </div>
-</div>
-<div id="crump-lab-human-cognition-and-performance" class="section level3 col-sm-6">
-<h3><a href="https://crumplab.github.io">Crump Lab: Human Cognition and Performance</a></h3>
-<p><a href = "https://crumplab.github.io"> <img src="images/logo.png" /> </a></p>
-</div>
+<div class="col-sm-6">
+
+
+
 
 
 
